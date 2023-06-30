@@ -10,17 +10,23 @@ git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.zsh/z
 
 
 cat > ~/.zshrc <<EOF
-# Configurações de ZSH de Thales Martim Coutinho
+# settings for ZSH by Thales Martim Coutinho
 
 # prompt:
-PROMPT=$'\n%K{yellow}[%F{%(!.red.default)}%n%f@%m]%k %d\n%F{%(?.green.red)}>%f '
+precmd() {
+  if [[ "fedorahost" == $HOSTNAME ]]; then
+    PROMPT=$'\n%K{yellow}[%F{%(!.red.default)}%n%f@%m]%k %d\n%F{%(?.green.red)}>%f '
+  else
+    PROMPT=$'\n%K{yellow}[%F{%(!.red.default)}%n%f@%F{blue}%m%f]%k %d\n%F{%(?.green.red)}>%f '
+  fi
+}
 
-# configurações de historico
+# history settings
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh/.zsh_history
 
-# configuracões de Tab
+# Tab settings
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -31,11 +37,14 @@ _comp_options+=(globdots)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.asdf/asdf.sh
 
-#configurações necessarias para o zsh-history-substring-search
+#settings for zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 #alias:
-#alias vscode="flatpak run com.visualstudio.code"
+alias backup="~/Dev/backup-na-nuvem/backup_na_nuvem.sh"
+alias vscode="flatpak run com.visualstudio.code"
+alias firefox="flatpak run org.mozilla.firefox"
 EOF
