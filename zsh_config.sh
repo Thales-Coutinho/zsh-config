@@ -14,11 +14,14 @@ cat > ~/.zshrc <<EOF
 
 # prompt:
 precmd() {
-  if [[ "fedorahost" == $HOSTNAME ]]; then
-    PROMPT=$'\n%K{yellow}[%F{%(!.red.default)}%n%f@%m]%k %d\n%F{%(?.green.red)}>%f '
+  if [[ `hostname` == "debian-host" ]]; then
+    COLOR='default'
   else
-    PROMPT=$'\n%K{yellow}[%F{%(!.red.default)}%n%f@%F{blue}%m%f]%k %d\n%F{%(?.green.red)}>%f '
+    COLOR='blue' 
   fi
+  PROMPT='
+%K{yellow}[%F{%(!.red.default)}%n%f@%F{'"$COLOR"'}%m%f]%k %d
+%F{%(?.green.red)}>%f '
 }
 
 # history settings
@@ -37,7 +40,6 @@ _comp_options+=(globdots)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/.asdf/asdf.sh
 
 #settings for zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
