@@ -1,7 +1,7 @@
 # zsh-config
 automating zsh configuration with the extensions I use.
 
-# como utilizar?
+## How to use?
 After installing zsh, to change the default shell, use ONE of the following options:
 - run the command "chsh -s /bin/zsh"
 - change the /etc/passwd file
@@ -9,7 +9,7 @@ After installing zsh, to change the default shell, use ONE of the following opti
 
 After that, give the script execution permissions and execute the command: ./zsh_config.sh in the directory where you store the Script.
 
-# What changes will be made?
+## What changes will be made?
 Customization of the prompt, in a way that I consider more readable, organized and beautiful. With highlighting the prompt and spacing of the previous command. With username, hostname and absolute path of the current directory on the top line and space for entering commands on the bottom line.
 
 The customized Prompt also features a root user indicator, changing the color of the user name to red, preventing commands from being run as a super user by accident. As well as the ">" icon signaling the exit status of the last command executed, being green for a successful command and red for failed execution.
@@ -22,7 +22,7 @@ I added the function of searching for command suggestions with the "Tab" key, wi
 ![Tab_exemplo](https://user-images.githubusercontent.com/79290513/208153921-304c66fc-76c7-4541-bcb1-85c7e342a619.png)
 
 
-third-party plugins used:
+## third-party plugins used
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)
 - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search.git)
