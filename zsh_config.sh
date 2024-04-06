@@ -9,7 +9,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.zsh/zsh-history-substring-search
 
 
-cat > ~/.zshrc <<EOF
+cat > ~/.zshrc <<'EOF'
 # settings for ZSH by Thales Martim Coutinho
 
 # prompt:
