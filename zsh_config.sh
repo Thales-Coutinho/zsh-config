@@ -20,8 +20,9 @@ precmd() {
     COLOR='blue' 
   fi
   PROMPT='
+%F{%(?.green.red)}%(?..)%f
 %K{yellow}[%F{%(!.red.default)}%n%f@%F{'"$COLOR"'}%m%f]%k %d
-%F{%(?.green.red)}>%f '
+> '
 }
 
 # history settings
@@ -46,7 +47,6 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 #alias:
-alias backup="~/Dev/backup-na-nuvem/backup_na_nuvem.sh"
-alias vscode="flatpak run com.visualstudio.code"
-alias firefox="flatpak run org.mozilla.firefox"
+alias backup="~/Dev/Cloud-Backup/cloud_backup.sh"
+alias update="sudo aptitude update -y && sudo aptitude upgrade -y && sudo flatpak update -y"
 EOF
