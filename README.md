@@ -8,27 +8,18 @@ ex: apt install zsh
 ### Change the default shell
 you can do that change the /etc/passwd file
 
-<<<<<<< HEAD
-### Install nerd fonts in your system to correct display the icons in prompt
-you can dowload from the [oficial site](https://www.nerdfonts.com/font-downloads) and add the files on ~/.local/share/fonts
-
-change the default font of your terminal with the new one
-
 ### Give the script execution permissions
 ex: chmod +x zsh_config.sh
 
 ### execute the script
 ex: ./zsh_config.sh
-=======
+
 After that, give the script execution permissions and execute the command: ./zsh_config.sh in the directory where you store the Script.
->>>>>>> 0c625fb (substrig-search adjusts, remove of nerd fonts necessity and small changes)
 
 ## What changes will be made?
 Customization of the prompt, in a way that I consider more readable, organized and beautiful. With highlighting the prompt and spacing of the previous command. With username, hostname and absolute path of the current directory displayed and space for entering commands on the bottom line.
 
 The customized Prompt also features a root user indicator, changing the color of the user name to red, preventing commands from being run as a super user by accident. As well as the icon on top signaling the exit status of the last command executed, being green for a successful command and red for failed execution.
-
-
 
 ![Prompt_example](https://github.com/Thales-Coutinho/zsh-config/assets/79290513/78da2e24-c6ce-4905-a3ff-40515b488762)
 
