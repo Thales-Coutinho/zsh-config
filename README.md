@@ -8,6 +8,7 @@ ex: apt install zsh
 ### Change the default shell
 you can do that change the /etc/passwd file
 
+<<<<<<< HEAD
 ### Install nerd fonts in your system to correct display the icons in prompt
 you can dowload from the [oficial site](https://www.nerdfonts.com/font-downloads) and add the files on ~/.local/share/fonts
 
@@ -18,6 +19,9 @@ ex: chmod +x zsh_config.sh
 
 ### execute the script
 ex: ./zsh_config.sh
+=======
+After that, give the script execution permissions and execute the command: ./zsh_config.sh in the directory where you store the Script.
+>>>>>>> 0c625fb (substrig-search adjusts, remove of nerd fonts necessity and small changes)
 
 ## What changes will be made?
 Customization of the prompt, in a way that I consider more readable, organized and beautiful. With highlighting the prompt and spacing of the previous command. With username, hostname and absolute path of the current directory displayed and space for entering commands on the bottom line.

@@ -19,34 +19,41 @@ precmd() {
   else
     COLOR='blue' 
   fi
-  PROMPT='
-%F{%(?.green.red)}%(?..)%f
+
+PROMPT='
+%F{%(?.green.red)}%(?.O.X)%f
 %K{yellow}[%F{%(!.red.default)}%n%f@%F{'"$COLOR"'}%m%f]%k %d
 > '
 }
 
-# history settings
+# history settings:
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=$HISTSIZE
 HISTFILE=~/.zsh/.zsh_history
+setopt sharehistory
 
-# Tab settings
+# Tab settings:
 autoload -U compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-#plugins:
+
+# plugins:
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-#settings for zsh-history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+# zsh-history-substring-search configuration
+bindkey '\eOA' history-substring-search-up # or '^[[A'
+bindkey '\eOB' history-substring-search-down # or '^[[B'
 
-#alias:
+
+# alias:
+alias ls='ls --color'
 alias backup="~/Dev/Cloud-Backup/cloud_backup.sh"
 alias update="sudo aptitude update -y && sudo aptitude upgrade -y && sudo flatpak update -y"
 EOF
