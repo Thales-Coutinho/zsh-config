@@ -14,8 +14,6 @@ ex: chmod +x zsh_config.sh
 ### execute the script
 ex: ./zsh_config.sh
 
-After that, give the script execution permissions and execute the command: ./zsh_config.sh in the directory where you store the Script.
-
 ## What changes will be made?
 Customization of the prompt, in a way that I consider more readable, organized and beautiful. With highlighting the prompt and spacing of the previous command. With username, hostname and absolute path of the current directory displayed and space for entering commands on the bottom line.
 
