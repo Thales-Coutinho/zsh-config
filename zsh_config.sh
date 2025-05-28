@@ -54,6 +54,12 @@ bindkey '\eOB' history-substring-search-down # or '^[[B'
 
 # alias:
 alias ls='ls --color'
+alias cp='cp -i'
 alias backup="~/Dev/Cloud-Backup/cloud_backup.sh"
 alias update="sudo aptitude update -y && sudo aptitude upgrade -y && sudo flatpak update -y"
+alias cotacao="/home/thales/.config/xfce4/xfce4-genmon-plugin-config.sh"
+alias VPNup="sudo wg-quick up ProtonVPN-teste"
+alias VPNdown="sudo wg-quick down ProtonVPN-teste"
+
+export PATH="$PATH:/usr/local/go/bin"
 EOF
